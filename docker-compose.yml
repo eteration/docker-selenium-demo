@@ -1,0 +1,16 @@
+
+wikipedia-test:
+  build: ./wikipedia-test
+  command: "mvn test"
+  volumes:
+    - ~/.m2:/root/.m2
+  links:
+    - selfirefox:selfirefox
+
+selfirefox:
+  image: selenium/standalone-firefox
+  hostname: selfirefox
+  expose:
+    - "4444"
+  ports:
+    - 4444:4444
