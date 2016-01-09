@@ -17,4 +17,6 @@ WORKDIR /code/testing/wiki
 
 ADD ./test /code/testing/wiki
 
-RUN mvn test
+#This is test meant to run with a Remote Driver
+# Use Command and --link selfirefox to setup etc/hosts
+#RUN mvn test
