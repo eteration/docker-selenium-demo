@@ -34,3 +34,19 @@ git clone git@github.com:eteration/docker-selenium-demo.git
 cd docker-selenium-demo
 docker-compose up
 ```
+
+
+## Caching Maven Repository
+
+Docker containers running maven does not cache files under the .m2/ folder. Thherefore, maven will download everything from the internet by default.  This is slightly annoying but we can fix it by sharing a local repository with the docker container that runs maven. There are more than one way of caching the repository but this is one of the simpler methods.  Modify the docker-compose.yml file and add a volume that will be mounted on the container.  The example below mount the .m2 from users home folder to /root/.2 (default location for the repository in official maven image):
+
+```
+wikipedia-test:
+  build: ./wikipedia-test
+  command: "mvn test"
+  volumes:
+    - ~/.m2:/root/.m2
+  links:
+    - selfirefox:selfirefox
+
+```
