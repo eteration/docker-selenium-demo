@@ -11,7 +11,7 @@ You should have Docker Toolbox installed, see https://www.docker.com/toolbox
 ### Step 0 - List Docker Machine
 
 ```
-~/git/docker-ci-tool-stack$ docker-machine ls
+~/docker-selenium-demo $ docker-machine ls
 ~/docker-selenium-demo $ docker-machine ls
 NAME      ACTIVE   DRIVER       STATE     URL                         SWARM   DOCKER   ERRORS
 default   *        virtualbox   Running   tcp://192.168.99.100:2376           v1.9.1   
